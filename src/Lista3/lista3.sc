@@ -18,7 +18,7 @@ def area(a: Double, b: Double)(f: Double => Double)(n: Int) =
   def listing(iter: Int): List[Int] =
     if iter < n then iter :: listing(iter + 1)
     else Nil
-  val diff = (b - first_a) / (n - 1)
+  val diff = (b - a) / (n - 1)
   val xs = listing(1)
 
   (xs map (x => f(a + diff * x) * diff) foldLeft(0.0))((sum, x) => sum + x)
